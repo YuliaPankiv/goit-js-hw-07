@@ -43,7 +43,7 @@ function onImgGallery(event) {
 
   instance.show();
 
-  addEventListener("keydown", onEsc);
+  addEventListener("keydown", onEsc, { once: true });
   function onEsc(e) {
     if (e.code === "Escape") {
       instance.close();
