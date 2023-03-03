@@ -38,7 +38,15 @@ function onImgGallery(event) {
     `<img
         src="${target.dataset.source}"
         alt= "${target.description}"
-      />`
+      />`,
+    {
+      onShow: (instance) => {
+        window.addEventListener("keydown", onEsc);
+      },
+      onClose: (instance) => {
+        window.removeEventListener("keydown", onEsc);
+      },
+    }
   );
 
   instance.show();
@@ -47,6 +55,7 @@ function onImgGallery(event) {
   function onEsc(e) {
     if (e.code === "Escape") {
       instance.close();
+      console.log("dslgh");
     }
   }
 }
