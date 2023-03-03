@@ -55,7 +55,7 @@ function onImgGallery(event) {
   function onEsc(e) {
     if (e.code === "Escape") {
       instance.close();
-      console.log("dslgh");
+     
     }
   }
 }
